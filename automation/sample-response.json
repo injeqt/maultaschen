@@ -1,0 +1,28 @@
+{
+  "Mensa Central": {
+    "2026-03-12": [
+      {
+        "category": "Suppe",
+        "meal": "Gemüsebrühe mit Reis",
+        "description": "",
+        "additives": "Sl,VG",
+        "price1": "0,99",
+        "price2": "1,39",
+        "price3": "1,79",
+        "weight_unit": "",
+        "foto": ""
+      },
+      {
+        "category": "Tagesangebot 1",
+        "meal": "Grünkernragout mit Kichererbsen",
+        "description": "und Dinkelbrötchen",
+        "additives": "Sl,GlD,GlR,GlG,VG,VR",
+        "price1": "2,99",
+        "price2": "5,99",
+        "price3": "6,49",
+        "weight_unit": "",
+        "foto": ""
+      }
+    ]
+  }
+}

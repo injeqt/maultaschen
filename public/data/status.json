@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-03-13T10:41:27.487387+00:00",
+  "canteen": "Mensa Central (Stuttgart Mitte)",
+  "today": "2026-03-14",
+  "todayHasMenu": false,
+  "hasMaultaschenToday": false,
+  "matchingMealsToday": [],
+  "nextMaultaschenDate": "2026-03-16",
+  "upcomingMaultaschenDays": [
+    {
+      "date": "2026-03-16",
+      "matches": [
+        {
+          "category": "All-Time-Classic tierisch",
+          "meal": "Maultaschen",
+          "description": "mit Zwiebelsauce und Kartoffelsalat"
+        },
+        {
+          "category": "All-Time-Classic vegan",
+          "meal": "Vegane Maultaschen",
+          "description": "mit Zwiebelschmelze und Kartoffelsalat"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-17",
+      "matches": [
+        {
+          "category": "All-Time-Classic tierisch",
+          "meal": "Maultaschen",
+          "description": "mit Zwiebelsauce und Kartoffelsalat"
+        },
+        {
+          "category": "All-Time-Classic vegan",
+          "meal": "Vegane Maultaschen",
+          "description": "mit Zwiebelschmelze und Kartoffelsalat"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-18",
+      "matches": [
+        {
+          "category": "All-Time-Classic tierisch",
+          "meal": "Maultaschen",
+          "description": "mit Zwiebelsauce und Kartoffelsalat"
+        },
+        {
+          "category": "All-Time-Classic vegan",
+          "meal": "Vegane Maultaschen",
+          "description": "mit Zwiebelschmelze und Kartoffelsalat"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "matches": [
+        {
+          "category": "All-Time-Classic tierisch",
+          "meal": "Maultaschen",
+          "description": "mit Zwiebelsauce und Kartoffelsalat"
+        },
+        {
+          "category": "All-Time-Classic vegan",
+          "meal": "Vegane Maultaschen",
+          "description": "mit Zwiebelschmelze und Kartoffelsalat"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "matches": [
+        {
+          "category": "All-Time-Classic tierisch",
+          "meal": "Maultaschen",
+          "description": "mit Zwiebelsauce und Kartoffelsalat"
+        },
+        {
+          "category": "All-Time-Classic vegan",
+          "meal": "Vegane Maultaschen",
+          "description": "mit Zwiebelschmelze und Kartoffelsalat"
+        }
+      ]
+    }
+  ]
+}

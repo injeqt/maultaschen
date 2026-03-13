@@ -1,0 +1,92 @@
+name: Update menu status
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 4-15 * * 1-5"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  generate-status:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r automation/requirements.txt
+
+      - name: Generate status JSON
+        run: python automation/generate_status.py --output public/data/status.json
+
+      - name: Upload generated status
+        uses: actions/upload-artifact@v4
+        with:
+          name: status-data
+          path: public/data/status.json
+          if-no-files-found: error
+
+  build-site:
+    runs-on: ubuntu-latest
+    needs: generate-status
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Set up Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Download generated status
+        uses: actions/download-artifact@v4
+        with:
+          name: status-data
+          path: .artifacts/status-data
+
+      - name: Restore generated status file
+        run: |
+          mkdir -p public/data
+          mv .artifacts/status-data/status.json public/data/status.json
+
+      - name: Build site
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-site
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
