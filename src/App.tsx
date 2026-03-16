@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { AppFooter } from "./components/AppFooter";
 import { BackgroundScene } from "./components/BackgroundScene";
 import { DetailsCard } from "./components/DetailsCard";
 import { StatusPanel } from "./components/StatusPanel";
@@ -19,10 +20,7 @@ function App() {
 
         <StatusPanel status={status} />
         <DetailsCard status={status} />
-
-        <footer className="footer">
-          <span>Zuletzt aktualisiert: {status.updatedAt}</span>
-        </footer>
+        <AppFooter updatedAt={status.updatedAt} />
       </section>
     </main>
   );
