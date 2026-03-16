@@ -31,7 +31,11 @@ jobs:
         run: pip install -r automation/requirements.txt
 
       - name: Generate status JSON
-        run: python automation/generate_status.py --output public/data/status.json
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 5
+          max_attempts: 3
+          command: python automation/generate_status.py --output public/data/status.json
 
       - name: Upload generated status
         uses: actions/upload-artifact@v4
