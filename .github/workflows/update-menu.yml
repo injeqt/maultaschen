@@ -3,7 +3,7 @@ name: Update menu status
 on:
   workflow_dispatch:
   schedule:
-    - cron: "20 4 * * *"
+    - cron: "42 0 * * *"
 
 permissions:
   contents: read
